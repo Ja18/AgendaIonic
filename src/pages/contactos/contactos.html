@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contacto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contactoItem of contactos">
+      <h2>{{contactoItem.nombre}} {{contactoItem.apellido}}</h2>
+      <p>{{contactoItem.telefono}}</p>
+      <button ion-button clear item-end (click)="borrar(contactoItem); $event.stopPropagation()">Borrar</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
