@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Editar Contacto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form (ngSubmit)="editar(editarForm)" #editarForm="ngForm">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" name="nombre" [(ngModel)]="nuevoForm.nombre" required ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Apellido</ion-label>
+        <ion-input type="text" name="apellido" [(ngModel)]="nuevoForm.apellido" floating></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-label floating>Empresa</ion-label>
+        <ion-input type="text" name="empresa" [(ngModel)]="nuevoForm.empresa" floating></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-label floating>Teléfono</ion-label>
+        <ion-input type="text" name="telefono" [(ngModel)]="nuevoForm.telefono" floating></ion-input>
+      </ion-item>      
+    <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input type="text" name="correo" [(ngModel)]="nuevoForm.correo" floating></ion-input>
+      </ion-item>
+  </ion-list>
+  <div padding>
+      <button ion-button clear small color="primary" (click)="onGuardar()">Guardar</button>
+  </div>
+</form>
+</ion-content>

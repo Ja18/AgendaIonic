@@ -11,7 +11,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 //cargar ContactoService
 import { ContactoService } from './contacto.service';
 
-
+import { EditarcontactoPage } from '../pages/editarcontacto/editarcontacto';
 import { NuevocontactoPage } from '../pages/nuevocontacto/nuevocontacto';
 import { ContactosPage } from '../pages/contactos/contactos';
 import { HomePage } from '../pages/home/home';
@@ -23,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    EditarcontactoPage,
     NuevocontactoPage,
     ContactosPage,
     HomePage,
@@ -37,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    EditarcontactoPage,
     NuevocontactoPage,
     ContactosPage,
     HomePage,

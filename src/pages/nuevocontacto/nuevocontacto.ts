@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { ContactoService } from '../../app/contacto.service';
 import { Contacto } from '../../app/contacto';
+import { EditarcontactoPage } from '../editarcontacto/editarcontacto';
 
 @Component({
   selector: 'page-nuevocontacto',
@@ -14,9 +15,9 @@ export class NuevocontactoPage {
   nuevoForm = {};
 
   constructor(public navCtrl: NavController, private contactoService: ContactoService, public toastCtrl: ToastController) {
-
+    
   }
-
+  
   getContactos(): void {
     //this.bandas = this.bandaService.getBandas();
     this.contactoService.getContactos().then(contactos => this.contactos = this.contactos);
@@ -47,5 +48,4 @@ export class NuevocontactoPage {
         toast.present();
       });
   }
-
 }

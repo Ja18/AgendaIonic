@@ -10,7 +10,7 @@ import { Contacto } from './contacto';
 export class ContactoService {
 
     private contactosUrl = 'api/contactos'; // URL to web api
-    constructor(private http: Http) {}
+    constructor(private http: Http) { }
 
     //creamos el metodo getContactos para consultar al servidor la lista de contactos
     getContactos(): Promise<Contacto[]> {
@@ -36,6 +36,16 @@ export class ContactoService {
     }
 
     crearNuevo(nombre: string, apellido: string, empresa: string, telefono: string, correo: string):
+    Promise<Contacto> {
+        return this.http
+        .post(this.contactosUrl, JSON.stringify({nombre: nombre, apellido: apellido, empresa: empresa
+        , telefono: telefono, correo: correo}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data as Contacto)
+        .catch(this.handleError);
+    }
+
+    editarNuevo(nombre: string, apellido: string, empresa: string, telefono: string, correo: string):
     Promise<Contacto> {
         return this.http
         .post(this.contactosUrl, JSON.stringify({nombre: nombre, apellido: apellido, empresa: empresa
